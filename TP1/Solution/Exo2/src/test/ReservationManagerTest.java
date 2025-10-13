@@ -4,32 +4,27 @@ import com.example.dao.ReservationDao;
 import com.example.entity.*;
 import com.example.service.IParkingPlaceManager;
 import com.example.service.ReservationManager;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Date;
 
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 class ReservationManagerTest {
-    private ReservationManager reservationManager;
-
+    // Use Mockito to mock dependencies and inject them into the SUT
     @Mock
     private ReservationDao reservationDao;
     @Mock
     private IParkingPlaceManager parkingPlaceManager;
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-        // Create instance of ReservationManager
-        reservationManager = new ReservationManager();
-        // Inject the mocked dependencies
-        reservationManager.setReservationDao(reservationDao);
-        reservationManager.setiPlaceManager(parkingPlaceManager);
-    }
+    @InjectMocks
+    private ReservationManager reservationManager;
 
+    // Method to create test data for reservations
     private Reservation createTestReservation() {
         Reservation reservation = new Reservation();
         
@@ -90,7 +85,6 @@ class ReservationManagerTest {
 
     @Test
     void testCancelReservation_WhenStatusIsPending_ShouldCancelReservation() {
-        // Arrange
         int reservationId = 100;
         Reservation reservation = createTestReservation();
         reservation.setReservationId(reservationId);
@@ -107,7 +101,6 @@ class ReservationManagerTest {
 
     @Test
     void testCancelReservation_WhenStatusIsConfirmed_ShouldNotCancelReservation() {
-        // Arrange
         int reservationId = 100;
         Reservation reservation = createTestReservation();
         reservation.setReservationId(reservationId);
@@ -115,8 +108,6 @@ class ReservationManagerTest {
 
         // Mock the DAO to return a confirmed reservation
         when(reservationDao.getReservationById(reservationId)).thenReturn(reservation);
-
-        // Act
         reservationManager.cancelReservation(reservationId);
 
         // Assert
@@ -126,16 +117,12 @@ class ReservationManagerTest {
 
     @Test
     void testCancelReservation_WhenStatusIsCancelled_ShouldNotCancelAgain() {
-        // Arrange
         int reservationId = 100;
         Reservation reservation = createTestReservation();
         reservation.setReservationId(reservationId);
         reservation.setStatus(ReservationStatus.CANCELLED);
 
-        // Mock the DAO to return an already cancelled reservation
         when(reservationDao.getReservationById(reservationId)).thenReturn(reservation);
-
-        // Act
         reservationManager.cancelReservation(reservationId);
 
         // Assert
@@ -143,7 +130,5 @@ class ReservationManagerTest {
         verify(reservationDao, never()).updateReservationStatus(anyInt(), any());
     }
 
-    // ========== Helper method to create test data ==========
 
-    
 }
