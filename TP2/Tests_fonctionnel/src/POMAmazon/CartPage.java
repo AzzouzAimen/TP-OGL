@@ -10,7 +10,7 @@ public class CartPage extends PageObjet {
     private final By productTitleInCartXpath(String productName) {
         return By.xpath("//span[@class='a-truncate-cut' and contains(text(),'" + productName + "')]");
     }
-    private final By quantityInCart = By.cssSelector("span.a-dropdown-prompt"); // Updated robust selector
+    private final By quantityInCart = By.cssSelector("span[data-a-selector='value']");
     private final By priceInCart = By.cssSelector(".sc-list-item-content .sc-product-price");
 
 

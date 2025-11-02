@@ -1,0 +1,238 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2025-11-02T14:05:49.992Z",
+        "before": [
+          {
+            "result": {
+              "duration": 6681782100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.setUp()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Successfully add a book to the cart",
+        "description": "",
+        "id": "add-product-to-cart-on-amazon;successfully-add-a-book-to-the-cart",
+        "after": [
+          {
+            "result": {
+              "duration": 194733900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1547878600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I am on the Amazon homepage",
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.iAmOnTheAmazonHomepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4160748500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I select \"Books\" category from the search dropdown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Books\"",
+                  "offset": 9
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iSelectCategoryFromSearchDropdown(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 149308800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I search for \"python in easy steps\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"python in easy steps\"",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iSearchFor(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8909775200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click on the first search suggestion",
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.iClickOnTheFirstSearchSuggestion()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6452806400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I click on the \"Python in easy steps\" book from results",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Python in easy steps\"",
+                  "offset": 15
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iClickOnTheBookFromResults(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 509107300,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I select quantity \"2\" from the dropdown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2\"",
+                  "offset": 18
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iSelectQuantityFromTheDropdown(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2351560300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I click the \"Add to Cart\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Add to Cart\"",
+                  "offset": 12
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iClickTheButton(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28857500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I should see \"Added to cart\" confirmation message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Added to cart\"",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iShouldSeeConfirmationMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2470551500,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I go to the cart",
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.iGoToTheCart()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 22703000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I should see \"Python in easy steps\" in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Python in easy steps\"",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.iShouldSeeInTheCart(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16270100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the quantity should be \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2\"",
+                  "offset": 23
+                }
+              ],
+              "location": "stepDefinitions.AmazonSteps.theQuantityShouldBe(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 44259300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the price should be displayed",
+            "match": {
+              "location": "stepDefinitions.AmazonSteps.thePriceShouldBeDisplayed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Add product to cart on Amazon",
+    "description": "  As a customer\n  I want to search for a product and add it to my cart\n  So that I can purchase it later",
+    "id": "add-product-to-cart-on-amazon",
+    "keyword": "Feature",
+    "uri": "file:src/features/AmazonAddToCart.feature",
+    "tags": []
+  }
+]
